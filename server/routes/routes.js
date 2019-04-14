@@ -7,7 +7,7 @@ module.exports = function() {
   });
 
   router.get("/nosotros", (req, res) => {
-    res.render("nosotros/nosotros");
+    res.render("nosotros");
   });
 
   return router;
