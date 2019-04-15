@@ -1,0 +1,19 @@
+extends ../layout/index
+block content
+    main.container
+        h1.text-center.my-5 #{title.toUpperCase()}
+        .row.proximos-viajes
+            each viaje in viajes
+                .col-md-6.col-lg-4.mb-4
+                    .card
+                        img(src=`img/destinos_${viaje.imagen}.jpg`, alt=`${viaje.imagen}`, class="img-fluid")
+                        .card-body
+                            h3 #{viaje.titulo}
+                            p 
+                                i.far.fa-calendar-alt 
+                                |  #{viaje.fecha_ida} - #{viaje.fecha_vuelta}
+                            p
+                                i.fas.fa-dollar-sign
+                                |  #{viaje.precio}
+                            p #{viaje.descripcion.substr(0,100)}...
+                            a(href=`viajes/${viaje.id}`, class="btn btn-success btn-block") Mas Información

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const routes = require("./routes/routes.js");
 const path = require("path");
-const db = require("./config/database.js");
+// const db = require("./config/database.js");
 
 const configs = require("../server/config");
 const config = configs[app.get("env")];
@@ -14,9 +14,9 @@ app.set("views", path.join(__dirname, "./views"));
 
 app.use(express.static("public"));
 
-db.authenticate()
-  .then(() => console.log("Conexion a la BD establecida"))
-  .catch(err => console.log("Error al conectar DB: ", err.message));
+// db.authenticate()
+//   .then(() => console.log("Conexion a la BD establecida"))
+//   .catch(err => console.log("Error al conectar DB: ", err.message));
 
 // // * año actual
 // app.use((req, res, next) => {
