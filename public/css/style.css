@@ -15,13 +15,13 @@ h3 {
   color: #15b9d5;
 }
 h1 {
-  font-size: 3.4rem;
+  /* font-size: 3.4rem; */
 }
 h2 {
-  font-size: 2.4rem;
+  /* font-size: 2.4rem; */
 }
 h3 {
-  font-size: 3rem;
+  /* font-size: 3rem; */
 }
 
 .btn-success {
@@ -79,7 +79,7 @@ blockquote {
   line-height: 2;
 }
 p {
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   line-height: 2;
 }
 .navegacion {
@@ -93,7 +93,7 @@ header .nav a {
 footer .nav a,
 .copyright {
   /* font-family: "Staatliches", cursive; */
-  font-size: 1.6rem;
+  font-size: 1rem;
   color: black;
 }
 .listado-iconos {

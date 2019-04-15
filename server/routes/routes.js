@@ -7,7 +7,10 @@ module.exports = function() {
   });
 
   router.get("/nosotros", (req, res) => {
-    res.render("nosotros");
+    res.render("nosotros", {
+      title: "Sobre Nosotros",
+      year: new Date().getFullYear()
+    });
   });
 
   return router;
