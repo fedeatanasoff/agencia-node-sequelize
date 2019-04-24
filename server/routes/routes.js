@@ -22,7 +22,7 @@ module.exports = function() {
           viajes
         })
       )
-      .catch(err => console.log("Error al cargar los viajes: ".err.message));
+      .catch(err => console.log(`Error al cargar los viajes. ${err.message}`));
   });
 
   router.get("/viajes/:id", (req, res) => {
