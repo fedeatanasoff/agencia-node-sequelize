@@ -7,11 +7,14 @@ block content
             .col-md-12
                 .row.justify-content-center
                     .col-md-8
-                        form
+                        form(action="/testimoniales", method="post")
                             .form-group
-                                input(type="text", id="nombre", name="nombre", class="form-control", placeholder="ingresa tu nombre")
+                                input(type="text", id="nombre", name="nombre", class="form-control", placeholder="ingresa tu nombre", value=nombre)
                             .form-group
-                                input(type="email", id="email", name="email", class="form-control", placeholder="ingresa tu email")
+                                input(type="email", id="email", name="email", class="form-control", placeholder="ingresa tu email", value=email)
                             .form-group
-                                textarea(id="mensaje", name="mensaje", class="form-control", placeholder="ingresa tu mensaje", rows="5")
+                                textarea(id="mensaje", name="mensaje", class="form-control", placeholder="ingresa tu mensaje", rows="5")=mensaje
+                            if(errores)
+                                each error in errores
+                                    .alert.alert-danger.text-center=error.mensaje
                             input.btn.btn-success.btn-block(type="submit", value="Enviar")
