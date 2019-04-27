@@ -1,0 +1,16 @@
+extends ../layout/index
+block content
+    main.container.mt-5
+        h1.text-center.mb-5 #{title.toUpperCase()}
+        //- testimoniales aqui
+        .row
+            .col-md-12
+                .row.justify-content-center
+                    .col-md-8
+                        form
+                            .form-group
+                                input(type="text", id="nombre", name="nombre", class="form-control", placeholder="ingresa tu nombre")
+                            .form-group
+                                input(type="email", id="email", name="email", class="form-control", placeholder="ingresa tu email")
+                            .form-group
+                                textarea(id="mensaje", name="mensaje", class="form-control", placeholder="ingresa tu mensaje", rows="5")

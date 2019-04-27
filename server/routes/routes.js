@@ -35,5 +35,11 @@ module.exports = function() {
       .catch(err => console.log("Error: ", err.message));
   });
 
+  router.get("/testimoniales", (req, res) => {
+    res.render("testimoniales", {
+      title: "Testimoniales"
+    });
+  });
+
   return router;
 };
