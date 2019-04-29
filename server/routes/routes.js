@@ -37,9 +37,12 @@ module.exports = function() {
   });
 
   router.get("/testimoniales", (req, res) => {
-    res.render("testimoniales", {
-      title: "Testimoniales"
-    });
+    Testimoniales.findAll().then(testimoniales =>
+      res.render("testimoniales", {
+        title: "Testimoniales",
+        testimoniales
+      })
+    );
   });
 
   router.post("/testimoniales", (req, res) => {
@@ -65,7 +68,7 @@ module.exports = function() {
         email,
         mensaje
       })
-        .then(testimonial => res.redirect("/"))
+        .then(testimonial => res.redirect("/testimoniales"))
         .catch(err => console.log(err));
     }
   });
