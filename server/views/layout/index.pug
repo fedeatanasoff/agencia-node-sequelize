@@ -8,7 +8,8 @@ html(lang="es")
         link(rel="stylesheet", href="/css/style.css")
         link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.1/css/all.css")
         title #{sitioNombre} - #{title}
-    body
+    body(class=clase)
         include includes/header
+        block slider
         block content
         include includes/footer

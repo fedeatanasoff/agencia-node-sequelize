@@ -5,7 +5,15 @@ const Testimoniales = require("../models/Testimonial");
 
 module.exports = function() {
   router.get("/", (req, res) => {
-    res.render("index");
+    Viajes.findAll()
+      .then(viajes =>
+        res.render("index", {
+          title: "Home",
+          clase: "home",
+          viajes
+        })
+      )
+      .catch(err => console.log(`Error al cargar los viajes. ${err.message}`));
   });
 
   router.get("/nosotros", (req, res) => {
@@ -55,13 +63,16 @@ module.exports = function() {
 
     if (errores.length > 0) {
       console.log(errores);
-      res.render("testimoniales", {
-        title: "Testimoniales",
-        errores,
-        nombre,
-        email,
-        mensaje
-      });
+      Testimoniales.findAll().then(testimoniales =>
+        res.render("testimoniales", {
+          title: "Testimoniales",
+          testimoniales,
+          errores,
+          nombre,
+          email,
+          mensaje
+        })
+      );
     } else {
       Testimoniales.create({
         nombre,
